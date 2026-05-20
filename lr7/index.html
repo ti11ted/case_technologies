@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учет клиентов в ателье</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Автоматизированная система учета клиентов в ателье</h1>
+        <p>Простой веб-сайт для добавления, просмотра и удаления заказов клиентов.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Добавление заказа</h2>
+
+            <form id="orderForm" class="form">
+                <label>
+                    ФИО клиента
+                    <input type="text" id="clientName" placeholder="Иванова Мария Сергеевна" required>
+                </label>
+
+                <label>
+                    Телефон
+                    <input type="tel" id="phone" placeholder="+7-913-111-22-33" required>
+                </label>
+
+                <label>
+                    Услуга
+                    <select id="service">
+                        <option>Ушить платье</option>
+                        <option>Подшить брюки</option>
+                        <option>Пошив юбки</option>
+                        <option>Замена молнии</option>
+                        <option>Ремонт пиджака</option>
+                        <option>Индивидуальный пошив</option>
+                    </select>
+                </label>
+
+                <label>
+                    Дата заказа
+                    <input type="date" id="orderDate" required>
+                </label>
+
+                <label>
+                    Статус
+                    <select id="status">
+                        <option>Принят</option>
+                        <option>В работе</option>
+                        <option>Готов</option>
+                        <option>Выдан</option>
+                        <option>Отменен</option>
+                    </select>
+                </label>
+
+                <label>
+                    Стоимость, руб.
+                    <input type="number" id="price" min="0" value="1500" required>
+                </label>
+
+                <button type="submit">Добавить запись</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="tableHeader">
+                <h2>Список заказов</h2>
+                <button id="clearButton" class="secondaryButton">Очистить таблицу</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Клиент</th>
+                        <th>Телефон</th>
+                        <th>Услуга</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                        <th>Стоимость</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTable">
+                    <!-- Сюда JavaScript добавляет записи -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Лабораторная работа 7. Разработка веб-сайта в CodePen.io</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
